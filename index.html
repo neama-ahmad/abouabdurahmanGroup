@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مجموعة أبو عبدالرحمن</title>
+
+  <!-- Arabic font (Cairo) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- 1) Desktop design + shared styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2) Phone & tablet design (must come AFTER style.css) -->
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+<!-- ========================================================================
+     index.html  -  PAGE CONTENT (structure only)
+     Files of this website:
+       index.html  -> this file: all the content of the page
+       style.css   -> desktop design + shared styles
+       mobile.css  -> phone & tablet design
+       translations.js -> ALL texts in Arabic and English (edit texts here)
+       script.js   -> language toggle (Arabic/English) and mobile menu
+       logo.png, designer.gif, images/  -> pictures (keep them next to this file)
+     ======================================================================== -->
+<!-- ======================================================================
+     HEADER (TOP MENU)
+     Logo + site name | menu links | language toggle (+ burger button on phones)
+     Every text that changes language has data-i18n="key".
+     The Arabic and English texts of each key are in translations.js.
+     ====================================================================== -->
+<header class="header">
+  <nav class="nav">
+    <a href="#home" class="brand">
+      <img class="logo" src="img/logo.jpg" alt="شعار مجموعة أبو عبدالرحمن">
+      <span class="brand-name" data-i18n="nav.brand">مجموعة أبو عبدالرحمن</span>
+    </a>
+
+    <!-- Menu links (each href points to a section id on this page) -->
+    <ul class="menu" id="menu">
+      <li><a href="#home" class="active" data-i18n="nav.home">الرئيسة</a></li>
+      <li><a href="#services" data-i18n="nav.services">خدماتنا</a></li>
+      <li><a href="#work" data-i18n="nav.work">أعمالنا</a></li>
+      <li><a href="#reviews" data-i18n="nav.reviews">آراء عملاءنا</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">تواصل معنا</a></li>
+    </ul>
+
+    <div class="controls">
+      <!-- Language toggle: both languages are always visible, the active one is gold -->
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="ar" lang="ar">العربية</button>
+        <button type="button" data-lang="en" lang="en">English</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ======================================================================
+     HERO (FIRST SECTION)
+     Big title, description, two buttons and the animation (designer.gif).
+     ====================================================================== -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+    <h1 data-i18n="hero.title">نحول أفكارك إلى هوية رقمية فاخرة</h1>
+    <p data-i18n="hero.text">مجموعة أبو عبدالرحمن شرفه الله تعالى للخدمات الالكترونية وتصاميم الجرافيك بمعايير وجودة احترافية</p>
+    <div class="hero-actions">
+      <a href="#order" class="btn btn-gold"><span data-i18n="hero.btnOrder">اطلب تصميمك الآن</span><i class="btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.5 7.5"/><circle cx="11" cy="11" r="1.8"/></svg></i></a>
+      <a href="#work" class="btn btn-outline"><span data-i18n="hero.btnWork">شاهد أعمالنا</span><i class="btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3"/></svg></i></a>
+    </div>
+    </div>
+    <!-- The animation box (GIF). On phones it appears ABOVE the title (see mobile.css) -->
+    <div class="hero-media" id="heroMedia">
+      <img src="designer.gif" alt="مصمم يعمل على تصميم" width="384" height="420">
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     SERVICES - خدمات متكاملة لهويتك
+     6 service cards. To change a service text: edit its key in translations.js (services.*).
+     ====================================================================== -->
+<section class="services" id="services">
+  <div class="container">
+    <header class="sec-head">
+      <h2 data-i18n="services.title">خدمات متكاملة لهويتك</h2>
+      <span class="bar"></span>
+    </header>
+    <!-- Service cards -->
+    <div class="cards">
+      <article class="card">
+        <span class="num" aria-hidden="true">01</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6 6 .9-4.4 4.2 1 6.1L12 16.3 6.4 19.2l1-6.1L3 8.9 9 8z"/></svg></div>
+        <h3 data-i18n="services.logo">تصميم شعارات</h3>
+      </article>
+      <article class="card">
+        <span class="num" aria-hidden="true">02</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6.5L20.5 7"/></svg></div>
+        <h3 data-i18n="services.email">إنشاء إيميلات</h3>
+      </article>
+      <article class="card">
+        <span class="num" aria-hidden="true">03</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="M8.3 10.8l7.4-3.6M8.3 13.2l7.4 3.6"/></svg></div>
+        <h3 data-i18n="services.social">إنشاء حسابات سوشيل ميديا</h3>
+      </article>
+      <article class="card">
+        <span class="num" aria-hidden="true">04</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="2"/><path d="M3.5 17l5-4.5 4 3.5 3-2.5 5 4"/></svg></div>
+        <h3 data-i18n="services.posts">تصميم منشورات إعلانية</h3>
+      </article>
+      <article class="card">
+        <span class="num" aria-hidden="true">05</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 15.5h6"/><circle cx="16.5" cy="19" r="3.2" fill="#0a0a0a"/><path d="M15.2 19l1 1 1.8-2"/></svg></div>
+        <h3 data-i18n="services.templates">تصميم قوالب فواتير وشهادات وملصقات</h3>
+      </article>
+      <article class="card">
+        <span class="num" aria-hidden="true">06</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><circle cx="8.5" cy="11" r="2"/><path d="M5.5 16c.6-1.8 1.8-2.6 3-2.6s2.4.8 3 2.6M14 10h5M14 13.5h4"/></svg></div>
+        <h3 data-i18n="services.cards">تصميم كروت شخصية وكروت عمل</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     OUR WORK - أعمالنا
+     8 cards. Each image is images/work-1.jpg ... images/work-8.jpg.
+     To change a picture: replace the file, or change the src below.
+     ====================================================================== -->
+<section class="works-sec" id="work">
+  <div class="container">
+    <header class="sec-head">
+      <h2 data-i18n="work.title">أعمالنا</h2>
+      <span class="bar"></span>
+      <p class="sec-sub" data-i18n="work.subtitle">مختارات من مشاريعنا الأخيرة</p>
+    </header>
+    <!-- Work cards: .work (dark frame) > .work-inner (white panel, 8px margin) > .work-media > img -->
+    <div class="works">
+      <figure class="work">
+        <div class="work-inner"><div class="work-media"><svg class="ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M3.5 17l5-4.5 4 3.5 3-2.5 5 4"/></svg><img src="images/work-1.jpg" alt="Project 1" loading="lazy" onerror="this.remove()"></div></div>
+      </figure>
+      <figure class="work">
+        <div class="work-inner"><div class="work-media"><svg class="ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M3.5 17l5-4.5 4 3.5 3-2.5 5 4"/></svg><img src="images/work-2.jpg" alt="Project 2" loading="lazy" onerror="this.remove()"></div></div>
+      </figure>
+      <figure class="work">
+        <div class="work-inner"><div class="work-media"><svg class="ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M3.5 17l5-4.5 4 3.5 3-2.5 5 4"/></svg><img src="images/work-3.jpg" alt="Project 3" loading="lazy" onerror="this.remove()"></div></div>
+      </figure>
+      <figure class="work">
+        <div class="work-inner"><div class="work-media"><svg class="ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M3.5 17l5-4.5 4 3.5 3-2.5 5 4"/></svg><img src="images/work-4.jpg" alt="Project 4" loading="lazy" onerror="this.remove()"></div></div>
+      </figure>
+      <figure class="work">
+        <div class="work-inner"><div class="work-media"><svg class="ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M3.5 17l5-4.5 4 3.5 3-2.5 5 4"/></svg><img src="images/work-5.jpg" alt="Project 5" loading="lazy" onerror="this.remove()"></div></div>
+      </figure>
+      <figure class="work">
+        <div class="work-inner"><div class="work-media"><svg class="ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M3.5 17l5-4.5 4 3.5 3-2.5 5 4"/></svg><img src="images/work-6.jpg" alt="Project 6" loading="lazy" onerror="this.remove()"></div></div>
+      </figure>
+      <figure class="work">
+        <div class="work-inner"><div class="work-media"><svg class="ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M3.5 17l5-4.5 4 3.5 3-2.5 5 4"/></svg><img src="images/work-7.jpg" alt="Project 7" loading="lazy" onerror="this.remove()"></div></div>
+      </figure>
+      <figure class="work">
+        <div class="work-inner"><div class="work-media"><svg class="ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M3.5 17l5-4.5 4 3.5 3-2.5 5 4"/></svg><img src="images/work-8.jpg" alt="Project 8" loading="lazy" onerror="this.remove()"></div></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     TESTIMONIALS - ماذا قال عملاءنا
+     5 sample opinions (the same 5 are repeated a second time with aria-hidden
+     so the endless slide has no gap). Both sets share the same keys, so edit
+     the texts once in translations.js (reviews.*).
+     Profile pictures: images/user-1.jpg ... user-5.jpg (a gold icon shows until you add them).
+     ====================================================================== -->
+<section class="reviews-sec" id="reviews">
+  <div class="container">
+    <header class="sec-head">
+      <h2 data-i18n="reviews.title">ماذا قال عملاءنا</h2>
+      <span class="bar"></span>
+    </header>
+  </div>
+  <!-- Sliding strip: first 5 cards are real, the next 5 are copies for the endless loop -->
+  <div class="marquee">
+    <div class="track">
+      <article class="tcard">
+        <div class="quote" aria-hidden="true">”</div>
+        <p class="t-text" data-i18n="reviews.1.text">تعامل راقٍ وتصميم شعار فاق توقعاتي، التسليم كان في الوقت المحدد والنتيجة احترافية جدًا.</p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <footer class="t-user">
+          <div class="avatar"><svg class="pf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"/></svg><img src="images/user-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+          <strong data-i18n="reviews.1.name">أحمد الحربي</strong>
+        </footer>
+      </article>
+      <article class="tcard">
+        <div class="quote" aria-hidden="true">”</div>
+        <p class="t-text" data-i18n="reviews.2.text">ساعدوني في تجهيز حساباتي على السوشيال ميديا وصمموا منشورات إعلانية جذبت متابعين جدد.</p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <footer class="t-user">
+          <div class="avatar"><svg class="pf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"/></svg><img src="images/user-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+          <strong data-i18n="reviews.2.name">سارة العتيبي</strong>
+        </footer>
+      </article>
+      <article class="tcard">
+        <div class="quote" aria-hidden="true">”</div>
+        <p class="t-text" data-i18n="reviews.3.text">كروت العمل والقوالب كانت بجودة عالية وتفاصيل دقيقة، أنصح بالتعامل معهم.</p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <footer class="t-user">
+          <div class="avatar"><svg class="pf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"/></svg><img src="images/user-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+          <strong data-i18n="reviews.3.name">محمد القحطاني</strong>
+        </footer>
+      </article>
+      <article class="tcard">
+        <div class="quote" aria-hidden="true">”</div>
+        <p class="t-text" data-i18n="reviews.4.text">سرعة في الاستجابة وتعديلات بدون تعقيد، فريق متعاون ويفهم المطلوب من أول مرة.</p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <footer class="t-user">
+          <div class="avatar"><svg class="pf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"/></svg><img src="images/user-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+          <strong data-i18n="reviews.4.name">نورة الدوسري</strong>
+        </footer>
+      </article>
+      <article class="tcard">
+        <div class="quote" aria-hidden="true">”</div>
+        <p class="t-text" data-i18n="reviews.5.text">هوية رقمية فاخرة فعلاً، شكرًا لكم على الإبداع والاهتمام بكل التفاصيل.</p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <footer class="t-user">
+          <div class="avatar"><svg class="pf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"/></svg><img src="images/user-5.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+          <strong data-i18n="reviews.5.name">خالد الشمري</strong>
+        </footer>
+      </article>
+      <article class="tcard" aria-hidden="true">
+        <div class="quote" aria-hidden="true">”</div>
+        <p class="t-text" data-i18n="reviews.1.text">تعامل راقٍ وتصميم شعار فاق توقعاتي، التسليم كان في الوقت المحدد والنتيجة احترافية جدًا.</p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <footer class="t-user">
+          <div class="avatar"><svg class="pf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"/></svg><img src="images/user-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+          <strong data-i18n="reviews.1.name">أحمد الحربي</strong>
+        </footer>
+      </article>
+      <article class="tcard" aria-hidden="true">
+        <div class="quote" aria-hidden="true">”</div>
+        <p class="t-text" data-i18n="reviews.2.text">ساعدوني في تجهيز حساباتي على السوشيال ميديا وصمموا منشورات إعلانية جذبت متابعين جدد.</p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <footer class="t-user">
+          <div class="avatar"><svg class="pf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"/></svg><img src="images/user-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+          <strong data-i18n="reviews.2.name">سارة العتيبي</strong>
+        </footer>
+      </article>
+      <article class="tcard" aria-hidden="true">
+        <div class="quote" aria-hidden="true">”</div>
+        <p class="t-text" data-i18n="reviews.3.text">كروت العمل والقوالب كانت بجودة عالية وتفاصيل دقيقة، أنصح بالتعامل معهم.</p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <footer class="t-user">
+          <div class="avatar"><svg class="pf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"/></svg><img src="images/user-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+          <strong data-i18n="reviews.3.name">محمد القحطاني</strong>
+        </footer>
+      </article>
+      <article class="tcard" aria-hidden="true">
+        <div class="quote" aria-hidden="true">”</div>
+        <p class="t-text" data-i18n="reviews.4.text">سرعة في الاستجابة وتعديلات بدون تعقيد، فريق متعاون ويفهم المطلوب من أول مرة.</p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <footer class="t-user">
+          <div class="avatar"><svg class="pf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"/></svg><img src="images/user-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+          <strong data-i18n="reviews.4.name">نورة الدوسري</strong>
+        </footer>
+      </article>
+      <article class="tcard" aria-hidden="true">
+        <div class="quote" aria-hidden="true">”</div>
+        <p class="t-text" data-i18n="reviews.5.text">هوية رقمية فاخرة فعلاً، شكرًا لكم على الإبداع والاهتمام بكل التفاصيل.</p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <footer class="t-user">
+          <div class="avatar"><svg class="pf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"/></svg><img src="images/user-5.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+          <strong data-i18n="reviews.5.name">خالد الشمري</strong>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     ORDER CARD - اطلب تصميمك الآن
+     Gold card + WhatsApp button. Change the number in the link: https://wa.me/NUMBER
+     ====================================================================== -->
+<section class="contact" id="order">
+  <div class="cta-card">
+    <h2 data-i18n="order.title">اطلب تصميمك الآن</h2>
+    <a class="wa-btn" dir="ltr" href="https://wa.me/966500000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.4 4 15.03c0 2.12.55 4.19 1.6 6.01L4 28l7.1-1.86a12 12 0 0 0 4.94 1.06h.01C22.68 27.2 28 21.8 28 15.17 28 8.4 22.68 3 16.04 3zm0 22.1h-.01a9.98 9.98 0 0 1-5.08-1.39l-.36-.22-4.2 1.1 1.12-4.1-.24-.38A9.9 9.9 0 0 1 6 15.03C6 9.5 10.5 5 16.04 5 21.56 5 26 9.5 26 15.17c0 5.53-4.44 9.93-9.96 9.93zm5.46-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+      <span data-i18n="order.btn">اطلب الآن</span>
+    </a>
+  </div>
+</section>
+
+<!-- ======================================================================
+     FOOTER - تواصل معنا
+     Social media icons. Replace each href="#" with your real account link.
+     ====================================================================== -->
+<footer class="footer" id="contact">
+  <div class="footer-inner">
+    <h2 data-i18n="footer.title">تواصل معنا</h2>
+    <span class="bar"></span>
+    <div class="socials">
+      <a class="soc" href="https://wa.me/966500000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.4 4 15.03c0 2.12.55 4.19 1.6 6.01L4 28l7.1-1.86a12 12 0 0 0 4.94 1.06h.01C22.68 27.2 28 21.8 28 15.17 28 8.4 22.68 3 16.04 3zm0 22.1h-.01a9.98 9.98 0 0 1-5.08-1.39l-.36-.22-4.2 1.1 1.12-4.1-.24-.38A9.9 9.9 0 0 1 6 15.03C6 9.5 10.5 5 16.04 5 21.56 5 26 9.5 26 15.17c0 5.53-4.44 9.93-9.96 9.93zm5.46-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg></a>
+      <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="soc" href="#" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.6 21h-6l-4.7-6.2L5.5 21h-3l7-8.1L2.2 3h6.2l4.2 5.6zm-1 16.2h1.7L7.3 4.7H5.5z"/></svg></a>
+      <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.5-3.3h-3.2V7.6c0-1 .4-1.8 1.9-1.8h1.4V3a18 18 0 0 0-2.1-.1c-2.6 0-4.3 1.6-4.3 4.4v2.4H7.5V13h2.9v8z"/></svg></a>
+      <a class="soc" href="#" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.4 1.7 3.9 4 4.1v3.1c-1.5 0-2.9-.5-4-1.2v6.2a6 6 0 1 1-6-6c.3 0 .6 0 .9.1v3.2a2.9 2.9 0 1 0 2 2.7V3z"/></svg></a>
+    </div>
+    <p class="copy" data-i18n="footer.copy">© 2026 مجموعة أبو عبدالرحمن. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<!-- 1) translations.js: all Arabic / English texts -->
+<script src="translations.js"></script>
+<!-- 2) script.js: language toggle + mobile menu (uses translations.js) -->
+<script src="script.js"></script>
+</body>
+</html>
