@@ -173,7 +173,7 @@ const TRANSLATIONS = {
 
   /* ---- BROWSER TAB TITLE ------------------------------------------------ */
   "page.title": {
-    ar: "مجموعة أبو عبدالرحمن",
-    en: "Abou Abdurahman Group"
+    ar: "مجموعة أبو عبدالرحمن | تصميم شعارات وهوية بصرية وخدمات إلكترونية",
+    en: "Abou Abdurahman Group | Logo Design, Branding & Digital Services"
   }
 };
